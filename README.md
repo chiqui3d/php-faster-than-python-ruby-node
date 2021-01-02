@@ -68,8 +68,10 @@ docker container run --rm -v $(pwd):/app/ python:3.9 python /app/python/ReadWeb.
 ### Output
 ```
 13847
-0.15877413749694824
+0.7469260692596436
 ```
+And adding the time before adding the request library
+`0.15877413749694824`
 
 # Node.js
 ## Fibonacci
