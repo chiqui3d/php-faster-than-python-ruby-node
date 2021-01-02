@@ -19,6 +19,11 @@ Any contribution or suggestion to suggestion the test is welcome.
 
 > In these first tests it is demonstrated that PHP is faster, and it still remains to add tests with version 8 with JIT
 
+* `--rm` will remove the container after execution
+* `-v $(pwd):/app/` will mount current directory
+* `php:7.4` i is the image
+* `php /app/php/Fibonacci.php` is the command which will be executed after the container is created
+
 # PHP
 ## Fibonacci 
 ```
@@ -90,3 +95,8 @@ docker container run --rm -v $(pwd):/app/ node:14 node /app/node/Fibonacci.js
 48601
 0.22399999999999998
 ```
+
+Also while adding other tests, you can see other types of Benchmarks, where you can also see the great speed of PHP, along with other frameworks.
+
+* https://www.techempower.com/benchmarks/#section=data-r19&hw=ph&test=fortune&l=zijzzz-1r
+* https://github.com/the-benchmarker/web-frameworks
