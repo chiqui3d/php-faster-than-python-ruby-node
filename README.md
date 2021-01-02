@@ -7,7 +7,17 @@ The tests are done with Docker and with official repositories of each language t
 
 The times may vary depending on the machine where it is used, I use it in my personal computer, but I know that the difference will be more or less the same.
 
+The first frameworks to be analyzed will be:
+
+* TS.ED (Node.js) https://github.com/TypedProject/tsed
+* Symfony (PHP) https://github.com/symfony/symfony
+* Laravel (PHP) https://github.com/laravel/laravel
+* Ruby on Rails (Ruby) https://github.com/rails/rails
+* Django (Python) https://github.com/django/django
+
 Any contribution or suggestion to suggestion the test is welcome.
+
+> In these first tests it is demonstrated that PHP is faster, and it still remains to add tests with version 8 with JIT
 
 # PHP
 ## Fibonacci 
@@ -25,4 +35,56 @@ docker container run --rm -v $(pwd):/app/ php:7.4 php /app/php/ReadWeb.php
 ```
 48621
 0.16656184196472
+```
+# Ruby
+## Fibonacci
+```
+docker container run --rm -v $(pwd):/app/ ruby:2.7 ruby /app/ruby/Fibonacci.rb
+```
+### Output
+`0.0191022`
+
+## Read Website
+```
+docker container run --rm -v $(pwd):/app/ ruby:2.7 ruby /app/ruby/ReadWeb.rb
+```
+### Output
+```
+13872
+0.2795085
+```
+# Python
+## Fibonacci
+```
+docker container run --rm -v $(pwd):/app/ python:3.9 python /app/python/Fibonacci.py
+```
+### Output
+`0.022989988327026367`
+
+## Read Website
+```
+docker container run --rm -v $(pwd):/app/ python:3.9 python /app/python/ReadWeb.py
+```
+### Output
+```
+13847
+0.15877413749694824
+```
+
+# Node.js
+## Fibonacci
+```
+docker container run --rm -v $(pwd):/app/ node:14 node /app/node/Fibonacci.js
+```
+### Output
+`0.014000000000000012`
+
+## Read Website
+```
+docker container run --rm -v $(pwd):/app/ node:14 node /app/node/Fibonacci.js
+```
+### Output
+```
+48601
+0.22399999999999998
 ```
